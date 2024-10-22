@@ -23,8 +23,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 int UEngineWindow::WindowMessageLoop()
 {
-    MSG msg;
-    while (true)
+    MSG msg{};
+    while (msg.message != WM_QUIT)
     {
         while (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
         {
@@ -95,6 +95,6 @@ UEngineWindow::~UEngineWindow()
 
 void UEngineWindow::ShowWindow()
 {
-    ShowWindow(m_hWindowHandle, SW_SHOW);
+    ::ShowWindow(m_hWindowHandle, SW_SHOW);
     UpdateWindow(m_hWindowHandle);
 }
