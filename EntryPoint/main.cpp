@@ -9,7 +9,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	_In_ int       nCmdShow)
 {
 	UEngineWindow* EngineWindow = UEngineWindow::CreateEngineWindow();
-	EngineWindow->Open();
+	EngineWindow->ShowWindow();
 
 	return UEngineWindow::WindowMessageLoop();
 }

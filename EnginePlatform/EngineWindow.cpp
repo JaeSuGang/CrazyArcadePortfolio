@@ -40,7 +40,7 @@ int UEngineWindow::WindowMessageLoop()
 }
 
 UEngineWindow::UEngineWindow() :
-    m_WindowHandle{}
+    m_hWindowHandle{}
 {
     Initialize();
 }
@@ -72,10 +72,10 @@ void UEngineWindow::Initialize()
 
     RegisterClassExA(&wcex);
 
-    m_WindowHandle = CreateWindowA("DefaultWindow", "MainWindow", WS_OVERLAPPEDWINDOW,
+    m_hWindowHandle = CreateWindowA("DefaultWindow", "MainWindow", WS_OVERLAPPEDWINDOW,
         0, 0, CW_USEDEFAULT, 0, nullptr, nullptr, nullptr, nullptr);
 
-    if (!m_WindowHandle)
+    if (!m_hWindowHandle)
     {
         return;
     }
@@ -93,8 +93,8 @@ UEngineWindow::~UEngineWindow()
     Release();
 }
 
-void UEngineWindow::Open()
+void UEngineWindow::ShowWindow()
 {
-    ShowWindow(m_WindowHandle, SW_SHOW);
-    UpdateWindow(m_WindowHandle);
+    ShowWindow(m_hWindowHandle, SW_SHOW);
+    UpdateWindow(m_hWindowHandle);
 }

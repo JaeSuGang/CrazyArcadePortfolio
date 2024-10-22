@@ -5,7 +5,7 @@
 class UEngineWindow
 {
 public:
-	void Open();
+	void ShowWindow();
 	static int WindowMessageLoop();
 
 public:
@@ -22,7 +22,7 @@ private:
 	UEngineWindow& operator=(UEngineWindow&& _Other) noexcept = delete;
 
 private:
-	HWND m_WindowHandle = nullptr;
+	HWND m_hWindowHandle = nullptr;
 
 };
 
