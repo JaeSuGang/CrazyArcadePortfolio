@@ -1,0 +1,5 @@
+
+
+
+functional 활용해서 wndproc 멤버 함수를 bind시켜 첫번째 인자를 객체로 채우고
+wndproc을 wcex 구조체에 넣을수 있게 만들기

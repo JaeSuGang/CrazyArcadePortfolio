@@ -1,8 +1,10 @@
 #include <Windows.h>
-#include "EngineWindow.h"
+#include "GameWindow.h"
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+    
+
     switch (message)
     {
     case WM_PAINT:
@@ -21,7 +23,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     return 0;
 }
 
-int UEngineWindow::WindowMessageLoop()
+int UGameWindow::WindowMessageLoop()
 {
     MSG msg{};
     while (msg.message != WM_QUIT)
@@ -39,24 +41,23 @@ int UEngineWindow::WindowMessageLoop()
     return (int)msg.wParam;
 }
 
-UEngineWindow::UEngineWindow() :
+UGameWindow::UGameWindow() :
     m_hWindowHandle{}
 {
     Initialize();
 }
 
-UEngineWindow* UEngineWindow::CreateEngineWindow()
+UGameWindow* UGameWindow::CreateGameWindow()
 {
-    UEngineWindow* EngineWindow = new UEngineWindow{};
+    UGameWindow* EngineWindow = new UGameWindow{};
     EngineWindow->Initialize();
 
     return EngineWindow;
 }
 
-void UEngineWindow::Initialize()
+void UGameWindow::Initialize()
 {
     WNDCLASSEXA wcex;
-
     wcex.cbSize = sizeof(WNDCLASSEX);
     wcex.style = CS_HREDRAW | CS_VREDRAW;
     wcex.lpfnWndProc = WndProc;
@@ -75,25 +76,19 @@ void UEngineWindow::Initialize()
     m_hWindowHandle = CreateWindowA("DefaultWindow", "MainWindow", WS_OVERLAPPEDWINDOW,
         0, 0, CW_USEDEFAULT, 0, nullptr, nullptr, nullptr, nullptr);
 
-    if (!m_hWindowHandle)
-    {
-        return;
-    }
-
-
 }
 
-void UEngineWindow::Release()
+void UGameWindow::Release()
 {
 
 }
 
-UEngineWindow::~UEngineWindow()
+UGameWindow::~UGameWindow()
 {
     Release();
 }
 
-void UEngineWindow::ShowWindow()
+void UGameWindow::ShowWindow()
 {
     ::ShowWindow(m_hWindowHandle, SW_SHOW);
     UpdateWindow(m_hWindowHandle);

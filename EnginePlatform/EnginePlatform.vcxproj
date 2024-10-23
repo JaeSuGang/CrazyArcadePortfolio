@@ -141,13 +141,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="EngineWindow.cpp">
+    <ClCompile Include="GameWindow.cpp">
       <SubType>
       </SubType>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EngineWindow.h">
+    <ClInclude Include="GameWindow.h">
       <SubType>
       </SubType>
     </ClInclude>
