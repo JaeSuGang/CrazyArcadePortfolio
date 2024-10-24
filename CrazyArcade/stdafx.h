@@ -1,5 +1,6 @@
 #pragma once
 
-#include <assert.h>
+#include <Windows.h>
+#include <Base/Vector2D.h>
 
 #include "define.h"

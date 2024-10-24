@@ -1,13 +1,17 @@
 #include "stdafx.h"
 #include "CrazyArcadeGame.h"
+#include "Windows/GameWindow.h"
 
 void CCrazyArcadeGame::RunForever()
 {
-	assert(m_bIsInitialized);
+	CGameWindow Window{};
+	Window.Initialize("CrazyArcade");
+	Window.ResizeWindow(FVector2D<int>(800, 600));
+	Window.Show();
 
 	while (true)
 	{
-
+		Window.MainLoop();
 
 
 	}
