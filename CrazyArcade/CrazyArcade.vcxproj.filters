@@ -7,10 +7,10 @@
     <ClInclude Include="CrazyArcadeEditor.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="define.h">
+    <ClInclude Include="stdafx.h">
       <Filter>pch</Filter>
     </ClInclude>
-    <ClInclude Include="stdafx.h">
+    <ClInclude Include="define.h">
       <Filter>pch</Filter>
     </ClInclude>
   </ItemGroup>

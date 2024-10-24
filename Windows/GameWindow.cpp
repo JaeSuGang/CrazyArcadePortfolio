@@ -11,12 +11,18 @@ void CGameWindow::ResizeWindow(FVector2D<int> Vector)
 
 void CGameWindow::MainLoop()
 {
-	MSG msg;
+	MSG msg{};
 
-	if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
+	while (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
 	{
+		if (msg.message == WM_QUIT || msg.message == WM_CLOSE || msg.message == WM_DESTROY)
+		{
+			(*m_pWindowCount)--;
+		}
+
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
+
 	}
 }
 
@@ -30,21 +36,11 @@ LRESULT CGameWindow::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPar
 {
 	switch (message)
 	{
-	case WM_KEYDOWN:
-	{
-		switch (wParam)
-		{
-		case VK_ESCAPE:
-			DestroyWindow(hWnd);
-			break;
-		default:
-			break;
-		}
-	}
-	break;
+	case WM_QUIT:
+	case WM_CLOSE:
 	case WM_DESTROY:
 		PostQuitMessage(0);
-		break;
+
 	default:
 		return DefWindowProc(hWnd, message, wParam, lParam);
 	}
@@ -75,8 +71,11 @@ WNDCLASSEXA CGameWindow::CreateWindowClass(const char* lpszClassName)
 	return wcex;
 }
 
-bool CGameWindow::Initialize(const char* lpszClassName)
+bool CGameWindow::Initialize(const char* lpszClassName, int* pWindowCount)
 {
+	(*pWindowCount)++;
+	m_pWindowCount = pWindowCount;
+
 	WNDCLASSEXA wcex = CreateWindowClass(lpszClassName);
 
 	if (!RegisterClassExA(&wcex))
@@ -93,4 +92,15 @@ bool CGameWindow::Initialize(const char* lpszClassName)
 	}
 
 	return true;
+}
+
+void CGameWindow::Release()
+{
+	DestroyWindow(m_hWnd);
+	m_hWnd = 0;
+}
+
+CGameWindow::~CGameWindow()
+{
+	Release();
 }
