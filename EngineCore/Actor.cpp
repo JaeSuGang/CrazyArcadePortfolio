@@ -5,3 +5,7 @@ void AActor::BeginPlay()
 {
 
 }
+
+void AActor::Initialize()
+{
+}

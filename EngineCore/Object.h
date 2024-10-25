@@ -1,7 +1,7 @@
 #pragma once
 class UObject
 {
-protected:
+public:
 	UObject() = default;
 
 private:

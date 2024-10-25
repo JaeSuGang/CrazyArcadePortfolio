@@ -5,5 +5,8 @@ class AActor : public UObject
 {
 public:
 	void BeginPlay();
+
+public:
+	virtual void Initialize();
 };
 
