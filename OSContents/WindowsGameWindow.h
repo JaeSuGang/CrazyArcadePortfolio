@@ -7,7 +7,7 @@ class CWindowsGameWindow : public IGameWindow
 public:
 	virtual void Render() override;
 	void ResizeWindow(FVector2D<int> Vector);
-	void MainLoop();
+	void WindowLoop();
 	void Show();
 	static LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 

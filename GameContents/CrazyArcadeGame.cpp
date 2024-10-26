@@ -5,21 +5,14 @@
 
 void CCrazyArcadeGame::RunForever()
 {
-	int nWindowCount{};
-
-	CWindowsGameWindow Window{};
-	Window.Initialize("CrazyArcade", &nWindowCount);
-	Window.ResizeWindow(FVector2D<int>(1280, 720));
-	Window.Show();
-
 	UEngine::GetEngine();
+	GEngine->InitializeOption1();
 	GEngine->LoadLevelTest();
 	GEngine->OpenLevelTest();
 
 
-	while (nWindowCount)
+	while (GEngine->GetWindowCount())
 	{
-		Window.MainLoop();
 		GEngine->Tick();
 		GEngine->Render();
 	}

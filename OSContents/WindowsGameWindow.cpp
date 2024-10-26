@@ -9,7 +9,7 @@ void CWindowsGameWindow::ResizeWindow(FVector2D<int> Vector)
 	}
 }
 
-void CWindowsGameWindow::MainLoop()
+void CWindowsGameWindow::WindowLoop()
 {
 	MSG msg{};
 

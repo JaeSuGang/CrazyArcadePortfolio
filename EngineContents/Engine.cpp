@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "Engine.h"
+#include "OSContents/WindowsGameWindow.h"
+#include "OSContents/WindowsTimer.h"
 
 
 void UEngine::OpenLevel(const char* lpszKey)
@@ -40,11 +42,38 @@ void UEngine::LoadLevelTest()
 
 void UEngine::Tick()
 {
-	m_CurrentLevel->Tick();
+	float fDeltaTime = m_Timer->GetDeltaTimeAndSetNewCounter();
+	m_GameWindow->WindowLoop();
+	m_CurrentLevel->Tick(fDeltaTime);
 }
 
 void UEngine::Render()
 {
+	m_GameWindow->Render();
+}
+
+void UEngine::SetWindow(IGameWindow* Window)
+{
+	m_GameWindow = Window;
+}
+
+int UEngine::GetWindowCount() const
+{
+	return m_nWindowCount;
+}
+
+void UEngine::InitializeOption1()
+{
+	CWindowsGameWindow* Window = new CWindowsGameWindow{};
+	Window->Initialize("CrazyArcade", &m_nWindowCount);
+	Window->ResizeWindow(FVector2D<int>(1280, 720));
+	Window->Show();
+
+	CWindowsTimer* Timer = new CWindowsTimer{};
+	Timer->Initialize();
+
+	m_GameWindow = Window;
+	m_Timer = Timer;
 }
 
 void UEngine::Release()
@@ -53,6 +82,9 @@ void UEngine::Release()
 	{
 		SAFE_DELETE((*iter).second);
 	}
+
+	SAFE_DELETE(m_GameWindow);
+	SAFE_DELETE(m_Timer);
 }
 
 void UEngine::Initialize()

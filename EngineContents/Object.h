@@ -2,6 +2,7 @@
 class UObject
 {
 public:
+	virtual void Initialize() = 0;
 	UObject() = default;
 
 private:

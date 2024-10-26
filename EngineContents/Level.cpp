@@ -2,11 +2,11 @@
 #include "Level.h"
 #include "EngineContents/Actor.h"
 
-void ULevel::Tick()
+void ULevel::Tick(float fDeltaTime)
 {
 	for (int i = 0; i < m_AllActors.size(); i++)
 	{
-		m_AllActors[i]->Tick();
+		m_AllActors[i]->Tick(fDeltaTime);
 	}
 }
 

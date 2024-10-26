@@ -13,6 +13,12 @@
     <ClInclude Include="GameWindow.h">
       <Filter>Interface</Filter>
     </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsTimer.h">
+      <Filter>Windows\Timer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -20,6 +26,9 @@
     </ClCompile>
     <ClCompile Include="WindowsGameWindow.cpp">
       <Filter>Windows\GameWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowsTimer.cpp">
+      <Filter>Windows\Timer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -40,6 +49,9 @@
     </Filter>
     <Filter Include="Interface">
       <UniqueIdentifier>{6621116d-459d-498f-9b71-c160bb4910a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Timer">
+      <UniqueIdentifier>{39ac40ba-1d13-4f2d-8805-2e43c80e67ae}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

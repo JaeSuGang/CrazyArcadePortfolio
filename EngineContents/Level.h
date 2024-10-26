@@ -18,7 +18,7 @@ public:
 		return Actor;
 	}
 
-	void Tick();
+	void Tick(float fDeltaTime);
 
 public:
 	void BeginPlay();

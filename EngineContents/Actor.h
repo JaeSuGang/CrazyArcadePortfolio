@@ -4,7 +4,7 @@
 class AActor : public UObject
 {
 public:
-	void Tick();
+	void Tick(float fDeltaTime);
 
 public:
 	void BeginPlay();

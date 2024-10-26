@@ -2,6 +2,7 @@
 #include "Object.h"
 #include "EngineContents/Level.h"
 #include "OSContents/GameWindow.h"
+#include "OSContents/Timer.h"
 
 class UEngine : public UObject
 {
@@ -16,11 +17,15 @@ public:
 	void Render();
 
 public:
+	void SetWindow(IGameWindow* Window);
+	int GetWindowCount() const;
+
+public:
+	void InitializeOption1();
 	void Release();
-	void Initialize();
+	void Initialize() override;
 	static UEngine* GetEngine();
 	~UEngine();
-
 private:
 	UEngine() = default;
 
@@ -28,6 +33,9 @@ private:
 	map<string, ULevel*> m_Levels;
 	ULevel* m_CurrentLevel;
 	IGameWindow* m_GameWindow;
+	ITimer* m_Timer;
+private:
+	int m_nWindowCount;
 };
 
 extern UEngine* GEngine;
