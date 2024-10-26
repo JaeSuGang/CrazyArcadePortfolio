@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "GameWindow.h"
+#include "WindowsGameWindow.h"
 
-void CGameWindow::ResizeWindow(FVector2D<int> Vector)
+void CWindowsGameWindow::ResizeWindow(FVector2D<int> Vector)
 {
 	if (m_hWnd)
 	{
@@ -9,7 +9,7 @@ void CGameWindow::ResizeWindow(FVector2D<int> Vector)
 	}
 }
 
-void CGameWindow::MainLoop()
+void CWindowsGameWindow::MainLoop()
 {
 	MSG msg{};
 
@@ -26,13 +26,13 @@ void CGameWindow::MainLoop()
 	}
 }
 
-void CGameWindow::Show()
+void CWindowsGameWindow::Show()
 {
 	ShowWindow(m_hWnd, SW_SHOW);
 	UpdateWindow(m_hWnd);
 }
 
-LRESULT CGameWindow::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+LRESULT CWindowsGameWindow::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	switch (message)
 	{
@@ -47,12 +47,12 @@ LRESULT CGameWindow::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPar
 	return 0;
 }
 
-HWND CGameWindow::GetWindowHandle() const
+HWND CWindowsGameWindow::GetWindowHandle() const
 {
 	return m_hWnd;
 }
 
-WNDCLASSEXA CGameWindow::CreateWindowClass(const char* lpszClassName)
+WNDCLASSEXA CWindowsGameWindow::CreateWindowClass(const char* lpszClassName)
 {
     WNDCLASSEXA wcex;
     wcex.cbSize = sizeof(WNDCLASSEX);
@@ -71,7 +71,12 @@ WNDCLASSEXA CGameWindow::CreateWindowClass(const char* lpszClassName)
 	return wcex;
 }
 
-bool CGameWindow::Initialize(const char* lpszClassName, int* pWindowCount)
+void CWindowsGameWindow::Render()
+{
+
+}
+
+bool CWindowsGameWindow::Initialize(const char* lpszClassName, int* pWindowCount)
 {
 	(*pWindowCount)++;
 	m_pWindowCount = pWindowCount;
@@ -94,13 +99,13 @@ bool CGameWindow::Initialize(const char* lpszClassName, int* pWindowCount)
 	return true;
 }
 
-void CGameWindow::Release()
+void CWindowsGameWindow::Release()
 {
 	DestroyWindow(m_hWnd);
 	m_hWnd = 0;
 }
 
-CGameWindow::~CGameWindow()
+CWindowsGameWindow::~CWindowsGameWindow()
 {
 	Release();
 }

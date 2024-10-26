@@ -7,15 +7,18 @@
     <ClInclude Include="define.h">
       <Filter>pch</Filter>
     </ClInclude>
-    <ClInclude Include="GameWindow.h">
+    <ClInclude Include="WindowsGameWindow.h">
       <Filter>Windows\GameWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="GameWindow.h">
+      <Filter>Interface</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>pch</Filter>
     </ClCompile>
-    <ClCompile Include="GameWindow.cpp">
+    <ClCompile Include="WindowsGameWindow.cpp">
       <Filter>Windows\GameWindow</Filter>
     </ClCompile>
   </ItemGroup>
@@ -34,6 +37,9 @@
     </Filter>
     <Filter Include="Linux">
       <UniqueIdentifier>{34d64a54-80a2-49df-ada6-c36191bd53e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{6621116d-459d-498f-9b71-c160bb4910a9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

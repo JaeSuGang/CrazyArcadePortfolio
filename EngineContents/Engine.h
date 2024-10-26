@@ -27,7 +27,7 @@ private:
 private:
 	map<string, ULevel*> m_Levels;
 	ULevel* m_CurrentLevel;
-	CGameWindow* m_GameWindow;
+	IGameWindow* m_GameWindow;
 };
 
 extern UEngine* GEngine;
