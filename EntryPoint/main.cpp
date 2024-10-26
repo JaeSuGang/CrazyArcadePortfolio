@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "CrazyArcade/CrazyArcadeGame.h"
+#include "GameContents/CrazyArcadeGame.h"
 
-#pragma comment (lib, "Windows.lib")
+#pragma comment (lib, "OSContents.lib")
 #pragma comment (lib, "CrazyArcade.lib")
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,

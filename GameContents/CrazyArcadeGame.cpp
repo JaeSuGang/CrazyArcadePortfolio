@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CrazyArcadeGame.h"
-#include "EngineCore/Engine.h"
-#include "Windows/GameWindow.h"
+#include "EngineContents/Engine.h"
+#include "OSContents/GameWindow.h"
 
 void CCrazyArcadeGame::RunForever()
 {
@@ -13,12 +13,15 @@ void CCrazyArcadeGame::RunForever()
 	Window.Show();
 
 	UEngine::GetEngine();
+	GEngine->LoadLevelTest();
+	GEngine->OpenLevelTest();
 
 
 	while (nWindowCount)
 	{
 		Window.MainLoop();
-
+		GEngine->Tick();
+		GEngine->Render();
 	}
 }
 

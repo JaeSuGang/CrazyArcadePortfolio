@@ -1,6 +1,22 @@
 #include "stdafx.h"
 #include "Level.h"
-#include "EngineCore/Actor.h"
+#include "EngineContents/Actor.h"
+
+void ULevel::Tick()
+{
+	for (int i = 0; i < m_AllActors.size(); i++)
+	{
+		m_AllActors[i]->Tick();
+	}
+}
+
+void ULevel::BeginPlay()
+{
+	for (int i = 0; i < m_AllActors.size(); i++)
+	{
+		m_AllActors[i]->BeginPlay();
+	}
+}
 
 void ULevel::Initialize()
 {
@@ -15,11 +31,6 @@ void ULevel::Release()
 	}
 
 	m_AllActors.clear();
-}
-
-ULevel::ULevel()
-{
-
 }
 
 ULevel::~ULevel()

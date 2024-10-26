@@ -4,9 +4,10 @@
 class AActor : public UObject
 {
 public:
-	void BeginPlay();
+	void Tick();
 
 public:
+	void BeginPlay();
 	virtual void Initialize();
 };
 

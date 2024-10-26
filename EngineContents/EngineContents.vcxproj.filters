@@ -16,6 +16,12 @@
     <ClCompile Include="Level.cpp">
       <Filter>Level</Filter>
     </ClCompile>
+    <ClCompile Include="Gamemode.cpp">
+      <Filter>Gamemode</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -36,6 +42,12 @@
     <ClInclude Include="define.h">
       <Filter>pch</Filter>
     </ClInclude>
+    <ClInclude Include="Gamemode.h">
+      <Filter>Gamemode</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="pch">
@@ -52,6 +64,12 @@
     </Filter>
     <Filter Include="Level">
       <UniqueIdentifier>{e089449b-bbeb-4831-a65c-7ba98dc3359c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gamemode">
+      <UniqueIdentifier>{22e28c35-f99a-470e-8704-b201c79b18f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{5d2fcb7c-779b-4c0c-affa-b963db01ffbc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
