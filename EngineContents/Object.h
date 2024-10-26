@@ -4,6 +4,7 @@ class UObject
 public:
 	virtual void Initialize() = 0;
 	UObject() = default;
+	virtual ~UObject() = default;
 
 private:
 	UObject(const UObject& Other) = delete;

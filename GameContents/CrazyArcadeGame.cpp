@@ -6,9 +6,6 @@
 void CCrazyArcadeGame::RunForever()
 {
 	UEngine::GetEngine();
-	GEngine->InitializeOption1();
-	GEngine->LoadLevelTest();
-	GEngine->OpenLevelTest();
 
 
 	while (GEngine->GetWindowCount())

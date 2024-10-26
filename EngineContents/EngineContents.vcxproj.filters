@@ -22,6 +22,9 @@
     <ClCompile Include="ActorComponent.cpp">
       <Filter>Component</Filter>
     </ClCompile>
+    <ClCompile Include="GameInstance.cpp">
+      <Filter>GameInstance</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -48,6 +51,9 @@
     <ClInclude Include="ActorComponent.h">
       <Filter>Component</Filter>
     </ClInclude>
+    <ClInclude Include="GameInstance.h">
+      <Filter>GameInstance</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="pch">
@@ -70,6 +76,9 @@
     </Filter>
     <Filter Include="Component">
       <UniqueIdentifier>{5d2fcb7c-779b-4c0c-affa-b963db01ffbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameInstance">
+      <UniqueIdentifier>{92d1e9a6-2127-4575-904d-f197dc40b6d6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
