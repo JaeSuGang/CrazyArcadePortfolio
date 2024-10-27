@@ -2,16 +2,23 @@
 #include "CrazyArcadeGame.h"
 #include "EngineContents/Engine.h"
 #include "OSContents/WindowsGameWindow.h"
+#include "OSContents/WindowsTimer.h"
 #include "GameContents/CAGameInstance.h"
 
 void CCrazyArcadeGame::RunForever()
 {
 	UEngine::GetEngine();
 
+	CWindowsTimer* Timer = new CWindowsTimer{};
+	Timer->Initialize();
+	CWindowsGameWindow* Window = new CWindowsGameWindow{};
+	Window->Initialize("CrazyArcade", GEngine->GetpWindowCount());
+	Window->Show();
+	GEngine->SetWindow(Window);
+	GEngine->SetTimer(Timer);
 	GEngine->SetGameInstance<UCAGameInstance>();
-	GEngine->GetGameInstance()->OpenTestLevel();
 
-	while (GEngine->GetWindowCount())
+	while (*GEngine->GetpWindowCount())
 	{
 		GEngine->Tick();
 		GEngine->Render();

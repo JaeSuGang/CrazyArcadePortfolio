@@ -3,6 +3,9 @@
 
 class UCAGameInstance : public UGameInstance
 {
+	typedef UGameInstance Super;
 
+public:
+	void Initialize() override;
 };
 

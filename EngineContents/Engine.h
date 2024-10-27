@@ -23,7 +23,8 @@ public:
 		m_ActiveGameInstance->Initialize();
 	}
 	void SetWindow(IGameWindow* Window);
-	int GetWindowCount() const;
+	void SetTimer(ITimer* Timer);
+	int* GetpWindowCount();
 
 public:
 	void Release();

@@ -1,5 +1,8 @@
 #pragma once
 #include "Object.h"
+#include "unordered_map"
+
+using std::unordered_map;
 
 class ULevel;
 
@@ -20,7 +23,7 @@ public:
 	~UGameInstance();
 	UGameInstance() = default;
 
-private:
+protected:
 	ULevel* m_ActiveLevel;
 	unordered_map<string, ULevel*> m_Levels;
 };

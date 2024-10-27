@@ -8,6 +8,7 @@ void UEngine::Tick()
 	float fDeltaTime = m_Timer->GetDeltaTimeAndSetNewCounter();
 	m_GameWindow->WindowLoop();
 	m_ActiveGameInstance->Tick(fDeltaTime);
+	m_ActiveGameInstance->LateTick(fDeltaTime);
 }
 
 void UEngine::Render()
@@ -25,9 +26,14 @@ void UEngine::SetWindow(IGameWindow* Window)
 	m_GameWindow = Window;
 }
 
-int UEngine::GetWindowCount() const
+void UEngine::SetTimer(ITimer* Timer)
 {
-	return m_nWindowCount;
+	m_Timer = Timer;
+}
+
+int* UEngine::GetpWindowCount()
+{
+	return &m_nWindowCount;
 }
 
 void UEngine::Release()
