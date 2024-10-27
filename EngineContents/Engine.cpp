@@ -15,10 +15,9 @@ void UEngine::Render()
 	m_GameWindow->Render();
 }
 
-void UEngine::SetGameInstance(UGameInstance* GameInstance)
+UGameInstance* UEngine::GetGameInstance()
 {
-	m_ActiveGameInstance = GameInstance;
-	m_ActiveGameInstance->Initialize();
+	return m_ActiveGameInstance;
 }
 
 void UEngine::SetWindow(IGameWindow* Window)

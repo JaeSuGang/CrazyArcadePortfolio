@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CAGameInstance.h" />
     <ClInclude Include="CrazyArcadeGame.h">
       <SubType>
       </SubType>
@@ -28,6 +29,7 @@
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CAGameInstance.cpp" />
     <ClCompile Include="CrazyArcadeGame.cpp">
       <SubType>
       </SubType>

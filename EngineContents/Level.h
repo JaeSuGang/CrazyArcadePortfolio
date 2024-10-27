@@ -12,13 +12,14 @@ public:
 	T* SpawnActor()
 	{
 		T* Actor = new T{};
-		Actor->Initialize();
-		Actor->BeginPlay();
-		m_AllActors.push_back(Actor);
+		m_ActorsToSpawn.push_back(Actor);
 		return Actor;
 	}
 
+	void TryDestroyActor(AActor* ActorToDelete);
+
 	void Tick(float fDeltaTime);
+	void LateTick(float fDeltaTime);
 
 public:
 	void BeginPlay();
@@ -27,9 +28,15 @@ public:
 	ULevel() = default;
 	~ULevel();
 
+private:
+	void HandleActorsToDestroy();
+	void HandleActorsToSpawn();
+
 
 private:
-	vector<AActor*> m_AllActors;
+	vector<AActor*> m_ActorsToSpawn;
+	vector<AActor*> m_ActorsToDestroy;
+	unordered_set<AActor*> m_AllActors;
 	AGamemode* m_Gamemode;
 };
 

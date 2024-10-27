@@ -14,7 +14,14 @@ public:
 	void Render();
 
 public:
-	void SetGameInstance(UGameInstance* GameInstance);
+	UGameInstance* GetGameInstance();
+	template<typename T>
+	void SetGameInstance()
+	{
+		static_assert(std::is_base_of<UGameInstance, T>::value);
+		m_ActiveGameInstance = new T{};
+		m_ActiveGameInstance->Initialize();
+	}
 	void SetWindow(IGameWindow* Window);
 	int GetWindowCount() const;
 

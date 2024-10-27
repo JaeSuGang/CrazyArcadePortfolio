@@ -13,6 +13,9 @@
     <ClInclude Include="define.h">
       <Filter>pch</Filter>
     </ClInclude>
+    <ClInclude Include="CAGameInstance.h">
+      <Filter>CAGameInstance</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CrazyArcadeGame.cpp">
@@ -24,6 +27,9 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>pch</Filter>
     </ClCompile>
+    <ClCompile Include="CAGameInstance.cpp">
+      <Filter>CAGameInstance</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -31,6 +37,9 @@
     </Filter>
     <Filter Include="pch">
       <UniqueIdentifier>{ef7261c3-a981-47ba-9043-9644e385a19c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CAGameInstance">
+      <UniqueIdentifier>{11537822-0c5b-4160-b490-b5959053f6b8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

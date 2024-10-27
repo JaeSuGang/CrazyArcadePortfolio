@@ -2,11 +2,14 @@
 #include "CrazyArcadeGame.h"
 #include "EngineContents/Engine.h"
 #include "OSContents/WindowsGameWindow.h"
+#include "GameContents/CAGameInstance.h"
 
 void CCrazyArcadeGame::RunForever()
 {
 	UEngine::GetEngine();
 
+	GEngine->SetGameInstance<UCAGameInstance>();
+	GEngine->GetGameInstance()->OpenTestLevel();
 
 	while (GEngine->GetWindowCount())
 	{
