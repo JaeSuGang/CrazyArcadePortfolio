@@ -3,6 +3,13 @@
 #include "OSContents/WindowsGameWindow.h"
 #include "OSContents/WindowsTimer.h"
 
+void UEngine::HandleKeyInput()
+{
+	m_KeyListener->GetKeyState();
+
+
+}
+
 void UEngine::Tick()
 {
 	float fDeltaTime = m_Timer->GetDeltaTimeAndSetNewCounter();
@@ -19,6 +26,22 @@ void UEngine::Render()
 UGameInstance* UEngine::GetGameInstance()
 {
 	return m_ActiveGameInstance;
+}
+
+UKeyManager* UEngine::GetKeyManager()
+{
+	if (m_KeyManager == nullptr)
+	{
+		SHOW_ERROR("InitializeKeyManager함수를 호출하고 GetKeyManager를 호출해주세요");
+	}
+
+	return m_KeyManager;
+}
+
+void UEngine::InitializeKeyManager(IKeyListener* KeyListener)
+{
+	m_KeyManager = new UKeyManager{};
+
 }
 
 void UEngine::SetWindow(IGameWindow* Window)
@@ -41,6 +64,7 @@ void UEngine::Release()
 	SAFE_DELETE(m_ActiveGameInstance);
 	SAFE_DELETE(m_GameWindow);
 	SAFE_DELETE(m_Timer);
+	SAFE_DELETE(m_KeyManager);
 }
 
 void UEngine::Initialize()

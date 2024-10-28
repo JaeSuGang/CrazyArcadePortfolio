@@ -9,7 +9,7 @@ public:
 
 public:
 	virtual void Initialize() override;
-	CWindowsTimer() = default;
+	CWindowsTimer();
 	
 
 private:

@@ -19,6 +19,12 @@
     <ClInclude Include="WindowsTimer.h">
       <Filter>Windows\Timer</Filter>
     </ClInclude>
+    <ClInclude Include="KeyListener.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsKeyListener.h">
+      <Filter>Windows\KeyListener</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -29,6 +35,9 @@
     </ClCompile>
     <ClCompile Include="WindowsTimer.cpp">
       <Filter>Windows\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowsKeyListener.cpp">
+      <Filter>Windows\KeyListener</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +61,9 @@
     </Filter>
     <Filter Include="Windows\Timer">
       <UniqueIdentifier>{39ac40ba-1d13-4f2d-8805-2e43c80e67ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\KeyListener">
+      <UniqueIdentifier>{5b03b521-2026-477e-a52a-5510dc3c528f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

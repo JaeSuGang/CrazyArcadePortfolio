@@ -25,7 +25,7 @@ public:
 	void BeginPlay();
 	void Initialize();
 	void Release();
-	ULevel() = default;
+	ULevel();
 	~ULevel();
 
 private:

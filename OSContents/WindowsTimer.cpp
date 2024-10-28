@@ -20,3 +20,10 @@ void CWindowsTimer::Initialize()
 	QueryPerformanceCounter(&m_LastCounter);
 	QueryPerformanceFrequency(&m_PerformanceFrequency);
 }
+
+CWindowsTimer::CWindowsTimer()
+	:
+	m_LastCounter{},
+	m_PerformanceFrequency{}
+{
+}

@@ -1,0 +1,39 @@
+
+
+폴더 3개
+01. BaseContents
+- KmBase
+02. EngineContents
+- KmEngine
+03. GameContents
+- CrazyArcade
+- CrazyArcadeEditor
+
+솔루션 하나당 게임하나.
+에디터는 게임 프로젝트를 참조하는 방식으로 만듬.
+게임, 게임 에디터 프로젝트는 main.cpp에서 winmain함수를 가짐.
+시작 프로젝트를 무엇으로 설정하고 빌드하냐에 따라 exe구성이 달라짐.
+다른게임을 만드려면 새로운 솔루션 생성
+
+pch는 BaseContents에서 생성
+pch에 using std는 쓰지 않음. 쓰는 헤더파일에서 using을 일일히 쓰게하기. 템플릿 클래스에서 using과 관련된 순서문제 발생하기때문
+
+★ Initialize 함수 안씀. 생성자는 private. 생성하는 함수를 Owner에게만 제공. owner에게 friend class 선언.
+owner에게 friend를 선언함으로써 유일하게 생성자를 호출할수 있게함.
+
+
+멤버 변수는 컨테이너에 한번에 모아서 관리. (순환을 통한 자동 메모리 할당 해제 용이)
+멤버를 Get하는 Get함수는 일일히 만들기.
+생성자는 SpawnActor, AddComponent, 
+UEngineSubsystem을 dynamic_cast가 아니라 string key로 가져오는 get함수로 가져옴
+★UEngine 구성 객체
+- unordered_map<string, UEngineSubsystem*> 으로 Manager들 저장
+- UKeyManager
+- UScreenManager
+- UTimeManager
+- URenderManager
+- UPhysicsManager
+- UGameInstance
+
+GetScreenManager() nullptr일시 디버그 msgassert"InitScreenManager를 먼저 호출하세요"
+InitScreenManager() 필요한 인자 전달

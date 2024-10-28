@@ -57,3 +57,10 @@ UGameInstance::~UGameInstance()
 {
 	this->Release();
 }
+
+UGameInstance::UGameInstance()
+	:
+	m_ActiveLevel{},
+	m_Levels{}
+{
+}

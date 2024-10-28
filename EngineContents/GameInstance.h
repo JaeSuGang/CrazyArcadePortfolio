@@ -21,7 +21,7 @@ public:
 	virtual void Initialize() override;
 	virtual void Release();
 	~UGameInstance();
-	UGameInstance() = default;
+	UGameInstance();
 
 protected:
 	ULevel* m_ActiveLevel;

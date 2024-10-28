@@ -25,6 +25,9 @@
     <ClCompile Include="GameInstance.cpp">
       <Filter>GameInstance</Filter>
     </ClCompile>
+    <ClCompile Include="KeyManager.cpp">
+      <Filter>KeyManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -54,6 +57,9 @@
     <ClInclude Include="GameInstance.h">
       <Filter>GameInstance</Filter>
     </ClInclude>
+    <ClInclude Include="KeyManager.h">
+      <Filter>KeyManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="pch">
@@ -79,6 +85,9 @@
     </Filter>
     <Filter Include="GameInstance">
       <UniqueIdentifier>{92d1e9a6-2127-4575-904d-f197dc40b6d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KeyManager">
+      <UniqueIdentifier>{bd865ea5-de4f-43e4-a169-41fec209b81f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

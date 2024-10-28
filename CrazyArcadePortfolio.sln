@@ -25,6 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "메모", "메모", "{00331C
 	ProjectSection(SolutionItems) = preProject
 		레벨구성.txt = 레벨구성.txt
 		생각.txt = 생각.txt
+		설계.txt = 설계.txt
 		C:\Users\33kkm\Desktop\설계도.jpg = C:\Users\33kkm\Desktop\설계도.jpg
 		해야하는것.txt = 해야하는것.txt
 	EndProjectSection

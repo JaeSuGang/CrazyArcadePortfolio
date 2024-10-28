@@ -21,9 +21,11 @@
   <ItemGroup>
     <ClInclude Include="define.h" />
     <ClInclude Include="GameWindow.h" />
+    <ClInclude Include="KeyListener.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="WindowsGameWindow.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="WindowsKeyListener.h" />
     <ClInclude Include="WindowsTimer.h" />
   </ItemGroup>
   <ItemGroup>
@@ -32,6 +34,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="WindowsKeyListener.cpp" />
     <ClCompile Include="WindowsTimer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

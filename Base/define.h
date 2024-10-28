@@ -3,4 +3,8 @@
 #include <assert.h>
 #include <Windows.h>
 
-#define ShowError(text) MessageBoxA(0, text, "에러", MB_OK); assert(false)
+#ifdef NDEBUG
+#define SHOW_ERROR(text) ((void)0)
+#else
+#define SHOW_ERROR(text) MessageBoxA(0, text, "에러", MB_OK); assert(false)
+#endif

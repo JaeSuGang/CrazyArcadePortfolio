@@ -40,6 +40,7 @@ LRESULT CWindowsGameWindow::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPAR
 	case WM_CLOSE:
 	case WM_DESTROY:
 		PostQuitMessage(0);
+		break;
 
 	default:
 		return DefWindowProc(hWnd, message, wParam, lParam);
@@ -103,6 +104,14 @@ void CWindowsGameWindow::Release()
 {
 	DestroyWindow(m_hWnd);
 	m_hWnd = 0;
+}
+
+CWindowsGameWindow::CWindowsGameWindow()
+	:
+	m_bIsLoopOn{},
+	m_hWnd{},
+	m_pWindowCount{}
+{
 }
 
 CWindowsGameWindow::~CWindowsGameWindow()

@@ -58,6 +58,15 @@ void ULevel::Release()
 	m_AllActors.clear();
 }
 
+ULevel::ULevel()
+	:
+	m_ActorsToDestroy{},
+	m_ActorsToSpawn{},
+	m_AllActors{},
+	m_Gamemode{}
+{
+}
+
 ULevel::~ULevel()
 {
 	this->Release();

@@ -17,7 +17,7 @@ public:
 public:
 	bool Initialize(const char* lpszClassName, int* pWindowCount);
 	void Release();
-	CWindowsGameWindow() = default;
+	CWindowsGameWindow();
 	~CWindowsGameWindow();
 
 private:
